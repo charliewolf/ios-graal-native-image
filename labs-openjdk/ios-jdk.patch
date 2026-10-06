@@ -1,14 +1,5 @@
-From 3bdcc4536ac3ee02420bcfbfa6fdd3f4bc7d6831 Mon Sep 17 00:00:00 2001
-Subject: [PATCH] Add iOS build support for JDK 25
-
----
- .../macosx/native/libjava/java_props_macosx.c   | 16 ++++++++++++++--
- .../macosx/native/libnet/DefaultProxySelector.c |  1 +
- .../unix/native/libnet/NetworkInterface.c       |  2 ++
- 3 files changed, 17 insertions(+), 2 deletions(-)
-
 diff --git a/src/java.base/macosx/native/libjava/java_props_macosx.c b/src/java.base/macosx/native/libjava/java_props_macosx.c
-index 6656bf04e..04ac8a6bc 100644
+index 6656bf04efc..04ac8a6bc33 100644
 --- a/src/java.base/macosx/native/libjava/java_props_macosx.c
 +++ b/src/java.base/macosx/native/libjava/java_props_macosx.c
 @@ -27,11 +27,14 @@
@@ -57,7 +48,7 @@ index 6656bf04e..04ac8a6bc 100644
 +#endif
  }
 diff --git a/src/java.base/macosx/native/libnet/DefaultProxySelector.c b/src/java.base/macosx/native/libnet/DefaultProxySelector.c
-index a176699be..e2d218cd1 100644
+index a176699bebb..e2d218cd1c2 100644
 --- a/src/java.base/macosx/native/libnet/DefaultProxySelector.c
 +++ b/src/java.base/macosx/native/libnet/DefaultProxySelector.c
 @@ -27,6 +27,7 @@
@@ -69,7 +60,7 @@ index a176699be..e2d218cd1 100644
  #include "jni.h"
  #include "jni_util.h"
 diff --git a/src/java.base/unix/native/libnet/NetworkInterface.c b/src/java.base/unix/native/libnet/NetworkInterface.c
-index 61267ec13..47b3d9ccc 100644
+index 61267ec13d5..47b3d9ccced 100644
 --- a/src/java.base/unix/native/libnet/NetworkInterface.c
 +++ b/src/java.base/unix/native/libnet/NetworkInterface.c
 @@ -25,7 +25,9 @@
