@@ -88,9 +88,15 @@ openjdk_project="$root_dir/labs-openjdk/svm.openjdk.xcodeproj"
 graal_project="$root_dir/svm/svm.graal.xcodeproj"
 
 build_archive "$openjdk_project" libjava Release-ios NO "JDK_VERSION_STRING=$jdk_version_string"
+build_archive "$openjdk_project" libnet Release-ios NO "JDK_VERSION_STRING=$jdk_version_string"
+build_archive "$openjdk_project" libnio Release-ios NO "JDK_VERSION_STRING=$jdk_version_string"
 build_archive "$graal_project" libjvm Release-ios NO
+build_archive "$graal_project" liblibchelper Release-ios NO
 build_archive "$openjdk_project" libjava Debug-ios YES "JDK_VERSION_STRING=$jdk_version_string"
+build_archive "$openjdk_project" libnet Debug-ios YES "JDK_VERSION_STRING=$jdk_version_string"
+build_archive "$openjdk_project" libnio Debug-ios YES "JDK_VERSION_STRING=$jdk_version_string"
 build_archive "$graal_project" libjvm Debug-ios YES
+build_archive "$graal_project" liblibchelper  Debug-ios YES
 
 pushd "$root_dir/cap-cache-generator" >/dev/null
 ./gradlew generateCapCache -PgraalvmHome="$GRAALVM_HOME"
